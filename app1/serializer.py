@@ -1,5 +1,9 @@
 from rest_framework import serializers
-from .models import FacilityToken, raw_crh_patient_diagnosis, raw_crh_patient_services, raw_hrm_patient_dignosis, raw_hrm_patient_services
+
+from .models import (FacilityToken, raw_crh_patient_diagnosis,
+                     raw_crh_patient_services, raw_hrm_patient_dignosis,
+                     raw_hrm_patient_services)
+
 
 class FacilityTokenSerializer(serializers.ModelSerializer):
     class Meta:

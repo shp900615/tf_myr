@@ -1,5 +1,9 @@
 from django.contrib import admin
-from .models import FacilityToken, raw_crh_patient_diagnosis, raw_crh_patient_services, raw_hrm_patient_dignosis, raw_hrm_patient_services, Facilities
+
+from .models import (Facilities, FacilityToken, raw_crh_patient_diagnosis,
+                     raw_crh_patient_services, raw_hrm_patient_dignosis,
+                     raw_hrm_patient_services)
+
 
 @admin.register(Facilities)
 class FacilityTokenAdmin(admin.ModelAdmin):

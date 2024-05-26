@@ -1,4 +1,5 @@
-from django.urls import path, include
+from django.urls import include, path
+
 from . import views
 
 urlpatterns1 = [
@@ -7,6 +8,7 @@ urlpatterns1 = [
 
 
 from django.urls import path
+
 from .views import upload_file
 
 urlpatterns = [

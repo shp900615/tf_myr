@@ -1,10 +1,12 @@
 # views.py
-from django.http import HttpResponse
-from .models import FacilityToken, Facilities
 import uuid
-from datetime import datetime
-from django.utils import timezone  # Importing timezone from Django's utilities
 from datetime import datetime, timedelta
+
+from django.http import HttpResponse
+from django.utils import timezone  # Importing timezone from Django's utilities
+
+from .models import Facilities, FacilityToken
+
 
 def generate_token():
     return str(uuid.uuid4())
@@ -42,8 +44,10 @@ def home(request):
 
 
 from django.shortcuts import render
+
 from .forms import UploadFileForm
 from .script import read_excel_file
+
 
 def upload_file(request):
     if request.method == 'POST':
@@ -62,6 +66,8 @@ def upload_file(request):
 import os
 
 from django.conf import settings
+
+
 def handle_uploaded_file(file):
     # Get the upload directory from Django settings
     upload_dir = os.path.join(settings.BASE_DIR,'app1','uploaded_files')

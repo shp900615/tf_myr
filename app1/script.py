@@ -1,6 +1,8 @@
-import requests
 import json
 import uuid
+
+import requests
+
 # from .models import FacilityToken
 
 BASE_URL = 'http://127.0.0.1:8000/'
@@ -63,7 +65,7 @@ print("generate_token",generate_token() )
 
 import pandas as pd
 
-file_path = 'uploaded_files/CRH-PD-DIAGNOSIS-AUG22.xlsx'
+# file_path = 'uploaded_files/CRH-PD-DIAGNOSIS-AUG22.xlsx'
 def read_excel_file(file_path):
     try:
         # Read the Excel file
@@ -79,7 +81,6 @@ def read_excel_file(file_path):
 
 
 
-import pandas as pd
 
 def read_excel_file(file_path):
     # Read the Excel file, skipping the first row
@@ -125,14 +126,15 @@ def validate_data(df):
 
 import re
 
+
 def validate_visit_no(visit_no):
     # Check if visit_no is null or empty
     if not visit_no:
         return "Visit No cannot be empty."
 
     # Check if visit_no contains only digits
-    if not re.match(r'^\d+$', visit_no):
-        return "Invalid Visit No format. Should contain only digits."
+    # if not re.match(r'^\d+$', visit_no):
+    #     return "Invalid Visit No format. Should contain only digits."
 
     # Check if visit_no is not negative
     if int(visit_no) < 0:
@@ -156,8 +158,7 @@ def validate_location(location):
     # You can implement your validation logic here
     return None
 
-# Example usage
-# file_path = 'path_to_your_excel_file.xlsx'
-df = read_excel_file(file_path)
-errors = validate_data(df)
-print(errors)
+
+# df = read_excel_file(file_path)
+# errors = validate_data(df)
+# print(errors)
